@@ -1,0 +1,40 @@
+:root { --gold:#f7c948; --green:#29e881; }
+* { box-sizing:border-box; }
+html,body { min-height:100%; }
+body { margin:0; background:#030303; color:#fff; font-family:Arial,Helvetica,sans-serif; }
+.page-wrap { min-height:100svh; display:grid; place-items:center; background:radial-gradient(circle at 50% 35%,#3b2700 0,#130d02 43%,#020202 100%); }
+.mobile-landing { position:relative; width:100%; min-height:100svh; overflow:hidden; isolation:isolate; background:radial-gradient(circle at 50% 35%,#432b00 0,#171005 31%,#070706 67%,#020202 100%); }
+.mobile-landing::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 18% 28%,#ffd54a24 0,transparent 28%),radial-gradient(circle at 84% 63%,#ffb3001c 0,transparent 30%); z-index:-2; }
+.mobile-landing::after { content:""; position:absolute; inset:0; background:linear-gradient(to bottom,#05040066 0,#0d09004d 44%,#000000e8 100%); z-index:-1; }
+.content { width:min(calc(100% - 38px),430px); margin:0 auto; padding:225px 0 110px; text-align:center; }
+.mini-label { display:inline-block; padding:8px 16px; border:1px solid #d9a52199; border-radius:999px; color:#ffe18a; font-size:9px; font-weight:800; letter-spacing:.22em; background:#171001cc; box-shadow:0 0 24px #f4b40024; }
+h1 { margin:25px 0 10px; font-size:clamp(58px,16vw,82px); line-height:.88; letter-spacing:-.06em; font-weight:950; text-transform:uppercase; text-shadow:0 7px 28px #000c; }
+h1 span { color:transparent; background:linear-gradient(180deg,#fff7c7 0,#ffd64d 42%,#b96e00 100%); background-clip:text; -webkit-background-clip:text; filter:drop-shadow(0 0 14px #ffbf006b); }
+.real-money { display:inline-block; margin-top:12px; padding:8px 18px; color:#171000; background:linear-gradient(90deg,#ffdf64,#f5a900); font-size:11px; font-weight:950; letter-spacing:.18em; transform:skew(-5deg); box-shadow:0 7px 25px #ffb30042; }
+.subtitle { margin:25px auto 18px; max-width:350px; color:#f8edcf; font-family:"Trebuchet MS","Avenir Next",Arial,sans-serif; font-size:15px; font-weight:600; line-height:1.55; letter-spacing:.015em; text-wrap:balance; text-shadow:0 3px 16px #000; }
+.benefit-line { width:fit-content; margin:18px auto 5px; display:flex; align-items:center; gap:12px; padding:10px 18px 10px 11px; border:1px solid #a97818; border-radius:999px; background:#171001d9; box-shadow:inset 0 0 22px #ffc10717; text-align:left; }
+.benefit-line>span { width:40px; height:40px; display:grid; place-items:center; border-radius:50%; background:linear-gradient(145deg,#ffe66e,#c47a00); color:#160e00; font-size:17px; font-weight:950; box-shadow:0 0 18px #ffc4005c; }
+.benefit-line p { margin:0; color:#cdbb8c; font-size:10px; line-height:1.35; letter-spacing:.04em; }
+.benefit-line strong { color:#fff; font-size:11px; text-transform:uppercase; }
+.withdrawal-features { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin:19px 0 0; }
+.withdrawal-features span { min-height:48px; display:flex; align-items:center; justify-content:center; gap:7px; padding:10px 9px; border:1px solid #8c671d; border-radius:10px; background:linear-gradient(145deg,#171207e8,#2b1c03e8); color:#fff0bd; font-family:"Trebuchet MS","Avenir Next",Arial,sans-serif; font-size:12px; font-weight:700; line-height:1.28; }
+.withdrawal-features b { width:18px; height:18px; flex:0 0 18px; display:grid; place-items:center; border-radius:50%; background:#f5b8002b; color:#ffd84d; font-size:11px; box-shadow:0 0 12px #ffc40038; }
+.cta-kicker { margin:26px 0 13px; color:#ffe477; font-size:9px; font-weight:950; letter-spacing:.16em; text-shadow:0 0 12px #ffc40099; }
+.whatsapp-button { min-height:66px; margin-top:0; padding:0 17px; display:grid; grid-template-columns:34px 1fr 20px; align-items:center; border:2px solid #ffe071; border-radius:13px; background:linear-gradient(100deg,#ffe26c 0,#ffc21c 48%,#e89a00 100%); color:#171000; text-decoration:none; font-size:12px; font-weight:950; letter-spacing:.09em; box-shadow:0 0 0 5px #ffc40012,0 0 32px #ffc40070,0 16px 34px #0009; transition:transform .2s,box-shadow .2s; animation:ctaPulse 2s ease-in-out infinite; }
+.whatsapp-button svg { width:31px; height:31px; color:#087e3f; filter:drop-shadow(0 1px 0 #ffffff88); }
+.whatsapp-button b { font-size:30px; color:#171000; }
+.whatsapp-button:hover { transform:translateY(-3px) scale(1.015); box-shadow:0 0 0 7px #ffc4001c,0 0 44px #ffc400a3,0 18px 36px #000a; }
+.whatsapp-button:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+.fast-note { width:fit-content; margin:17px auto 0; padding:6px 11px; display:flex; justify-content:center; align-items:center; gap:8px; border:1px solid #76571c80; border-radius:999px; background:#1b1305a6; color:#d9c38a; font-size:10px; font-weight:700; letter-spacing:.04em; box-shadow:inset 0 0 12px #ffc4000a; }
+.fast-note span { width:6px; height:6px; border-radius:50%; background:#ffc928; box-shadow:0 0 8px #ffc928; }
+footer { position:absolute; bottom:0; left:0; width:100%; padding:18px; text-align:center; background:#020201e8; border-top:1px solid #654b14; color:#8f7b48; }
+footer p { margin:4px; font-size:8px; letter-spacing:.1em; }
+footer strong { color:#c7aa5f; }
+.stars i { position:absolute; width:3px; height:3px; border-radius:50%; background:#ffd64d; box-shadow:0 0 9px #ffd64d; }
+.stars i:nth-child(1){top:8%;left:16%}.stars i:nth-child(2){top:19%;right:18%}.stars i:nth-child(3){top:38%;left:6%}.stars i:nth-child(4){top:56%;right:7%}.stars i:nth-child(5){top:72%;left:11%}.stars i:nth-child(6){top:79%;right:14%}
+.chip-stage { position:absolute; top:18px; left:50%; width:185px; height:185px; transform:translateX(-50%) rotate(-4deg); filter:drop-shadow(0 18px 28px #000b) drop-shadow(0 0 24px #ffc40066); z-index:2; }
+.chip-stage img { width:100%; height:100%; object-fit:contain; }
+@media (min-width:700px) { .page-wrap{padding:34px}.mobile-landing{width:430px;min-height:850px;border:1px solid #76561a;box-shadow:0 35px 90px #000b}.content{padding-top:225px}.chip-stage{top:20px} }
+@media (max-height:720px) { .content{padding-top:170px;padding-bottom:90px}.chip-stage{width:145px;height:145px;top:10px}h1{font-size:52px}.subtitle{margin:16px auto 10px}.benefit-line{margin-top:10px}.withdrawal-features{margin-top:11px}.whatsapp-button{margin-top:0} }
+@keyframes ctaPulse { 0%,100%{transform:scale(1);box-shadow:0 0 0 5px #ffc40012,0 0 28px #ffc40059,0 16px 34px #0009}50%{transform:scale(1.025);box-shadow:0 0 0 8px #ffc4001a,0 0 43px #ffc4009e,0 16px 34px #0009} }
+@media (prefers-reduced-motion:reduce) { *{transition:none!important}.whatsapp-button{animation:none} }
