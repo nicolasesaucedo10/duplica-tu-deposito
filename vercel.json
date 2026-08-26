@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/chat/:path*",
-      "destination": "https://panel-tracker-production.up.railway.app/chat/:path*"
+      "destination": "https://meta-whatsapp-tracker-production.up.railway.app/chat/:path*"
     }
   ]
 }
