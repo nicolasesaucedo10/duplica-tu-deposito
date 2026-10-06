@@ -4,22 +4,24 @@ Versión estática lista para GitHub y Vercel. No necesita instalar dependencias
 
 ## Seguimiento del botón de WhatsApp
 
-El botón apunta a `/chat/bplay`. Vercel reescribe esa ruta hacia el tracker
-publicado en Railway y el script de `index.html` conserva automáticamente
-`fbclid`, `utm_source`, `utm_campaign` y cualquier otro parámetro recibido.
+El botón apunta a `/chat/bplay`. Vercel reescribe esa ruta hacia
+`https://bplay-crm-nicolas-production.up.railway.app/chat/bplay`.
+El script de `index.html` conserva `fbclid`, todos los parámetros UTM y
+cualquier otro parámetro recibido. Las antiguas direcciones
+`meta-whatsapp-tracker-production` y `panel-tracker-production` quedaron fuera de uso.
 
-No reemplazarlo por un enlace directo a `wa.me`: hacerlo saltearía el tracker
-y la compra perdería la relación con el anuncio.
+El servicio elige un soporte activo y conectado, registra el origen de la
+visita y prepara un mensaje con una referencia `Ref: LP-...`. Cuando la persona
+lo envía, esa referencia vincula el origen con su conversación en el CRM.
+Si la persona elimina la referencia, no se vincula automáticamente.
+Abrir el botón no envía un mensaje ni crea un destinatario de campañas.
 
-### Estado del destino (6 de octubre de 2026)
+Si no hay un soporte conectado, muestra un aviso temporal para volver a
+intentar. `HEAD /chat/bplay` permite verificar el destino sin registrar clics.
 
-El destino configurado en `vercel.json`,
-`https://meta-whatsapp-tracker-production.up.railway.app`, devuelve HTTP 404
-con `Application not found`, tanto en `/health` como al abrir `/chat/bplay`
-desde la landing. El enlace y la conservación de parámetros funcionan;
-la redirección a WhatsApp queda pendiente de recuperar el servicio o configurar
-la URL vigente del tracker. No se publicó un número alternativo ni se salteó
-el seguimiento con un enlace directo.
+No reemplazar el botón por un enlace directo a `wa.me`: saltearía el registro
+local de origen. La atribución queda en el CRM; esta recuperación no incluye
+el envío automático de compras a Meta mediante Conversions API.
 
 ## Condiciones mostradas
 
