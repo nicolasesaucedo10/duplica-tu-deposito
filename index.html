@@ -102,33 +102,56 @@ body:not(.export) .promo-terms{max-width:544px;margin-top:20px;font-size:15px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 
 
-/* Reflejo sobre el borde elevado del botón. */
+/* Luz de canto y relieve del botón de contacto. */
+@property --rim-angle {
+  syntax: "<angle>";
+  initial-value: 30deg;
+  inherits: false;
+}
+body:not(.export) .whatsapp {
+  isolation: isolate;
+  border: 3px solid transparent;
+  background: linear-gradient(155deg, #aaffbf, #28f57a 43%, #12c967) padding-box,
+    conic-gradient(from var(--rim-angle), #046536, #03b962 22%, #ecfff3 29%, #52ffac 35%, #087343 49%, #01552c 70%, white 80%, #046536 95%) border-box;
+  box-shadow: inset 0 2px 1px #e7fff3, inset 0 -3px 1px #00994e, 0 6px 0 #045d31, 0 10px 22px #00db6738;
+}
+body:not(.export) .whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  height: auto;
+  border: 2px solid #54ffa4;
+  border-radius: inherit;
+  opacity: 0;
+  background: none;
+  pointer-events: none;
+}
+body:not(.export) .whatsapp-icon {
+  padding: 5px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  background: #053d25;
+  color: #effff4;
+}
+body:not(.export) .whatsapp:active {
+  transform: translateY(4px);
+  box-shadow: inset 0 2px 4px #006e3555, 0 2px 0 #045d31;
+}
 @media (prefers-reduced-motion: no-preference) {
-  body:not(.export) .whatsapp {
-    isolation: isolate;
-    overflow: hidden;
-    animation: whatsapp-pulse 3.8s ease-in-out infinite;
-  }
-  body:not(.export) .whatsapp::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: linear-gradient(110deg, transparent 38%, #ffffff55 50%, transparent 62%);
-    transform: translateX(-110%);
-    animation: whatsapp-sheen 3.8s ease-in-out infinite;
-  }
+  body:not(.export) .whatsapp { animation: rim-orbit 3s linear infinite; }
+  body:not(.export) .whatsapp::before { animation: contact-wave 2.8s ease-out infinite; }
+  body:not(.export) .whatsapp-icon { animation: contact-ring 2.8s ease-in-out infinite; }
 }
-@keyframes whatsapp-pulse {
-  0%, 100% { box-shadow: inset 0 2px 2px #eaffee80, 0 4px 0 #005d2a, 0 0 12px #1fff7a30; }
-  50% { box-shadow: inset 0 2px 3px #eaffeeaa, 0 4px 0 #005d2a, 0 0 25px #1fff7a80; }
+@keyframes rim-orbit { to { --rim-angle: 390deg; } }
+@keyframes contact-wave {
+  0% { opacity: .85; transform: scale(1); }
+  55%, 100% { opacity: 0; transform: scale(1.05, 1.38); }
 }
-@keyframes whatsapp-sheen {
-  0%, 30% { transform: translateX(-110%); }
-  68%, 100% { transform: translateX(110%); }
+@keyframes contact-ring {
+  0%, 36%, 100% { transform: rotate(0) scale(1); }
+  10% { transform: rotate(-13deg) scale(1.12); }
+  22% { transform: rotate(9deg) scale(1.08); }
 }
-
 </style></head><body><noscript>
   <img
     height="1"
