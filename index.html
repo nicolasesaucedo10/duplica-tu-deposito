@@ -76,6 +76,29 @@ body:not(.export) .whatsapp-icon{width:36px;height:36px;flex-basis:36px;color:#0
 body:not(.export) .footer{margin-top:30px}body:not(.export) .responsibility{font-size:12px;line-height:1.6;letter-spacing:.08em}body:not(.export) .conditions{font-size:12px;line-height:1.7;margin-top:12px;max-width:430px}
 body:not(.export) .promo-terms{max-width:544px;margin-top:20px;font-size:15px}
 @media(max-width:400px){body:not(.export){padding:12px 10px 24px}body:not(.export) #flyer{padding:20px 16px 24px;border-radius:22px}body:not(.export) .brand-caption{font-size:9px}body:not(.export) .hero{height:280px}body:not(.export) .chip{width:290px;height:290px}body:not(.export) .example{flex-wrap:wrap;gap:8px;font-size:13px}body:not(.export) .example strong{font-size:16px}body:not(.export) .whatsapp{padding:16px 14px;gap:12px}body:not(.export) .whatsapp-text{font-size:18px}}
+/* En móvil, la acción queda en la primera pantalla y el detalle de la promo sigue debajo. */
+@media(max-width:600px){
+  body:not(.export){padding:8px 8px 24px}
+  body:not(.export) #flyer{display:flex;flex-direction:column;align-items:center;padding:16px 16px 24px;border-radius:20px}
+  body:not(.export) .brand{order:0;min-height:28px}
+  body:not(.export) .hero{order:1;height:160px;margin:4px 0 6px;flex:none}
+  body:not(.export) .chip{width:175px;height:175px;top:-8px}
+  body:not(.export) .floor{height:28px;bottom:2px}body:not(.export) .shadow{bottom:4px}
+  body:not(.export) .promo-pill{order:2;min-height:30px;padding:6px 8px;font-size:10px}
+  body:not(.export) .headline{order:3;margin-top:13px;line-height:.98}
+  body:not(.export) .green-title{font-size:clamp(30px,8.4vw,46px)}
+  body:not(.export) .white-title{font-size:clamp(38px,10vw,54px);margin-top:5px}
+  body:not(.export) .ribbon{order:4;width:200px;height:30px;margin:13px auto 0}
+  body:not(.export) .ribbon span{font-size:13px}
+  body:not(.export) .subtitle{order:5;font-size:14px;line-height:1.45;margin:14px auto 0;max-width:350px}
+  body:not(.export) .cta-label{order:6;margin:18px 0 8px;font-size:10px}
+  body:not(.export) .whatsapp{order:7;min-height:70px;padding:13px 14px;gap:12px}
+  body:not(.export) .whatsapp-text{font-size:clamp(15px,4.5vw,19px)}
+  body:not(.export) .bonus{order:8;margin-top:28px}
+  body:not(.export) .example{order:9}
+  body:not(.export) .benefits{order:10}
+  body:not(.export) .footer{order:11}
+}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 
 </style></head><body><noscript>
